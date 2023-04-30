@@ -19,18 +19,18 @@ nextBtns.forEach((btn) =>
       checkInputs(inputs, inputMessages);
     }
     if (currentIndex !== pages.length - 1) {
-      // if (
-      //   inputvalues.every(notEmpty) &&
-      //   validateEmail(inputs[1]) &&
-      //   validateNumber(inputs[2])
-      // ) {
-      let currentPage = pages[currentIndex];
-      let nextIndex = currentIndex + 1;
-      let nextPage = pages[nextIndex];
-      currentPage.style.transform = "translateX(200%)";
-      nextPage.style.transform = "translateX(0)";
+      if (
+        inputvalues.every(notEmpty) &&
+        validateEmail(inputs[1]) &&
+        validateNumber(inputs[2])
+      ) {
+        let currentPage = pages[currentIndex];
+        let nextIndex = currentIndex + 1;
+        let nextPage = pages[nextIndex];
+        currentPage.style.transform = "translateX(200%)";
+        nextPage.style.transform = "translateX(0)";
+      }
     }
-    // }
   })
 );
 
