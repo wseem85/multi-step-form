@@ -1,0 +1,418 @@
+@use "./custome" as *;
+@use "./mixin" as *;
+$Marine-blue: hsl(213, 96%, 18%);
+$Purplish-blue: hsl(243, 100%, 62%);
+$Pastel-blue: hsl(228, 100%, 84%);
+$Light-blue: hsl(206, 94%, 87%);
+$Strawberry-red: hsl(354, 84%, 57%);
+
+$Cool-gray: hsl(231, 11%, 63%);
+$Light-gray: hsl(229, 24%, 87%);
+$Magnolia: hsl(217, 100%, 97%);
+$Alabaster: hsl(231, 100%, 99%);
+$White: hsl(0, 0%, 100%);
+$black: #222;
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: $Magnolia;
+}
+
+.wrapper {
+  padding: 0;
+  margin: 0;
+  width: 80vw;
+  height: 90vh;
+  margin: 5vh auto;
+  overflow: hidden;
+  border-radius: 1rem;
+  @include breakpoint-down-767 {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+  .row {
+    background-color: $White;
+    transition-property: all;
+    transition-duration: 1s;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    border-radius: 1rem;
+    @include breakpoint-down-767 {
+      background-color: $Magnolia;
+      width: 100%;
+      height: 500px;
+      padding: 0;
+      margin: 0;
+    }
+    &:not(:first-child) {
+      transform: translateX(-200%);
+    }
+    .sidebar {
+      background: url("../images/bg-sidebar-desktop.svg");
+      background-position: bottom left;
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 2rem;
+      border-radius: 1rem;
+      color: $White;
+      @include breakpoint-down-767 {
+        position: absolute;
+        background: url("../images/bg-sidebar-mobile.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        display: flex;
+        justify-content: center;
+        height: 33%;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        border-radius: 0 !important;
+      }
+      .step {
+        margin-bottom: 2rem;
+        display: flex;
+        .num {
+          @include flexCenter;
+
+          font-weight: 700;
+          font-size: 1.2rem;
+          min-width: 30px;
+          height: 30px;
+          background-color: transparent;
+          border: 1px solid $Light-blue;
+
+          &.active {
+            background-color: $Light-blue;
+            color: $Marine-blue;
+          }
+          @include breakpoint-down-767 {
+            min-width: 40px;
+            height: 40px;
+          }
+        }
+        .deatails {
+          .count {
+            color: $Light-gray;
+          }
+          .title {
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $White;
+          }
+          @include breakpoint-down-767 {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .main {
+      position: relative;
+      padding: 2rem;
+      @media (max-width: 970px) {
+        padding-left: 2rem;
+        padding-right: 0;
+      }
+      @include breakpoint-down-767 {
+        position: absolute;
+        top: 20%;
+        width: 90%;
+        left: 5%;
+        background-color: $White;
+        border-radius: 10px;
+        padding: 1rem;
+        padding-bottom: 1.5rem;
+      }
+      &__para {
+        color: $Cool-gray;
+        margin-bottom: 1rem;
+      }
+      &__input {
+        margin-bottom: 1rem;
+        position: relative;
+        label {
+          display: block;
+          padding-bottom: 0.5rem;
+        }
+        input {
+          width: 100%;
+          outline: none;
+          padding: 0.5rem;
+          border: 1px solid $Light-gray;
+          border-radius: 10px;
+          transition: all 0.5s;
+
+          &:focus {
+            border-color: $Cool-gray;
+          }
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        .message {
+          position: absolute;
+          bottom: -2rem;
+          display: none;
+          color: rgb(253, 94, 94);
+          right: 0;
+        }
+      }
+      .buttons {
+        position: absolute;
+        width: 85%;
+        left: 4.1rem;
+        bottom: 2.5rem;
+        // margin-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        @include breakpoint-down-767 {
+          width: 100%;
+          margin-top: 3rem;
+          bottom: -70px;
+          left: 0;
+        }
+        button:disabled {
+          opacity: 0.3;
+        }
+        .next {
+          display: block;
+          background-color: hsla(213, 93%, 17%, 0.836);
+          color: $Alabaster;
+          &:hover {
+            background-color: $Marine-blue;
+            color: $White;
+          }
+        }
+        .back {
+          background-color: $Light-gray;
+          color: $black;
+        }
+      }
+      .planes {
+        margin-top: 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.8rem;
+        @include breakpoint-down-767 {
+          flex-direction: column;
+          margin-top: 1.3rem;
+          font-size: 0.8rem;
+        }
+        .plane {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          padding: 1rem 1rem 1rem 0.5rem;
+          border: 1px solid $Light-gray;
+          border-radius: 6px;
+          background-color: transparent;
+          width: 30%;
+          @include breakpoint-down-767 {
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+          }
+          &__icon {
+            margin-bottom: 2.5rem;
+            @include breakpoint-down-767 {
+              margin-bottom: 0;
+              margin-right: 1.5rem;
+            }
+          }
+          &__deatails {
+            text-align: left;
+            div:first-of-type {
+              font-weight: bold;
+              font-size: 1.2rem;
+            }
+            .plane__price {
+              color: $Cool-gray;
+            }
+            .offer {
+              font-size: 8px;
+              color: $black;
+            }
+          }
+          &:hover,
+          &:focus {
+            border-color: $Cool-gray;
+            background-color: $Magnolia;
+          }
+        }
+        .plane.selected {
+          border-color: $Cool-gray;
+          background-color: $Magnolia;
+        }
+      }
+      .switch-container {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+        background-color: $Light-gray;
+        margin: 2.4rem 0 3.5rem;
+        border-radius: 6px;
+        @include breakpoint-down-767 {
+          margin-bottom: 0;
+        }
+        & > span {
+          font-weight: bold;
+          color: $Cool-gray;
+        }
+        & > span.c-black {
+          color: $black;
+        }
+        button {
+          padding: 1px;
+          width: 40px;
+          height: 20px;
+          background-color: $Marine-blue;
+          span {
+            width: 15px;
+            height: 15px;
+            background-color: $White;
+            border-radius: 50%;
+            display: block;
+
+            &.left-aligned {
+              margin-left: 0;
+              margin-right: auto;
+            }
+            &.right-aligned {
+              margin-right: 0;
+              margin-left: auto;
+            }
+          }
+        }
+      }
+      .add-ons {
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 100%;
+
+        @include breakpoint-down-992 {
+          gap: 0.5rem;
+        }
+        .add-on {
+          width: 100%;
+          padding: 1rem;
+          border: 1px solid $Light-gray;
+          border-radius: 10px;
+          display: flex;
+          justify-content: space-between;
+          @include breakpoint-down-992 {
+            padding: 0.5rem;
+          }
+          &:hover {
+            border-color: $Cool-gray;
+          }
+          .description {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            input {
+              display: block;
+              margin-right: 1rem;
+              transform: scale(1.3);
+            }
+            label {
+              div:first-of-type {
+                font-weight: bold;
+              }
+              div:last-of-type {
+                color: $Cool-gray;
+              }
+            }
+          }
+          .prices {
+            color: $Cool-gray;
+            font-weight: bold;
+          }
+        }
+        .add-on.selected {
+          border-color: $Cool-gray;
+          background-color: $Magnolia;
+        }
+      }
+      .summary {
+        .info {
+          background-color: $Alabaster;
+          padding: 1.2rem;
+          border-radius: 6px;
+          .plane-type {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            border-bottom: 1px solid $Light-gray;
+            padding: 1.325rem 0;
+
+            a {
+              display: block;
+              font-weight: normal;
+              cursor: pointer;
+            }
+
+            .plan-price {
+            }
+          }
+          .choosen-addons {
+            display: grid;
+            grid-template-columns: 1fr;
+            .choosen-addon {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              padding: 0.5rem 0;
+              div:first-of-type {
+                color: $Cool-gray;
+              }
+            }
+          }
+        }
+        .total {
+          padding: 1.2rem;
+          margin-top: 0.5rem;
+          display: flex;
+          justify-content: space-between;
+          div:first-of-type {
+            color: $Cool-gray;
+          }
+          div:last-of-type {
+            font-size: 1.3rem;
+            font-weight: bold;
+          }
+        }
+        .buttons {
+          margin-top: 6.5rem;
+        }
+      }
+      .thanks {
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        p {
+          color: $Cool-gray;
+        }
+      }
+    }
+  }
+}

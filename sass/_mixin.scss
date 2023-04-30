@@ -1,0 +1,22 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin positionAbsoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin breakpoint-down-992 {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+@mixin breakpoint-down-767 {
+  @media (max-width: 767px) {
+    @content;
+  }
+}

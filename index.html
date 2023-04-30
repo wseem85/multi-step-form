@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="dist/css/main.css" />
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <!-- <section class="all-content"> -->
+    <div class="wrapper position-relative">
+      <div class="row position-absolute top-0 start-0">
+        <div class="col-md-4 sidebar">
+          <div class="step">
+            <div class="num me-4 rounded-circle active">1</div>
+            <div class="deatails">
+              <div class="count">Step 1</div>
+              <div class="title">Your info</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num me-4 rounded-circle">2</div>
+            <div class="deatails">
+              <div class="count">Step 2</div>
+              <div class="title">select plane</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num me-4 rounded-circle">3</div>
+            <div class="deatails">
+              <div class="count">Step 3</div>
+              <div class="title">add-ons</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num me-4 rounded-circle">4</div>
+            <div class="deatails">
+              <div class="count">Step 4</div>
+              <div class="title">summary</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 main">
+          <h6 class="display-6 fw-bold">Personal info</h6>
+          <p class="main__para">
+            Please provide your name , email address ,and phone number
+          </p>
+          <div class="main__input">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" />
+            <span class="message">this filed is required</span>
+          </div>
+          <div class="main__input">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" />
+            <span class="message">this filed is required</span>
+          </div>
+          <div class="main__input">
+            <label for="number">Phone Number</label>
+            <input type="number" id="number" name="number" />
+            <span class="message">this filed is required</span>
+          </div>
+          <div class="buttons">
+            <button class="btn back" type="button" disabled>Go Back</button>
+            <button class="btn next" type="button">Next Step</button>
+          </div>
+        </div>
+      </div>
+      <div class="row position-absolute top-0 start-0" id="planes">
+        <div class="col-md-4 sidebar">
+          <div class="step">
+            <div class="num me-4 rounded-circle">1</div>
+            <div class="deatails">
+              <div class="count">Step 1</div>
+              <div class="title">Your info</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num me-4 rounded-circle active">2</div>
+            <div class="deatails">
+              <div class="count">Step 2</div>
+              <div class="title">select plane</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num me-4 rounded-circle">3</div>
+            <div class="deatails">
+              <div class="count">Step 3</div>
+              <div class="title">add-ons</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num me-4 rounded-circle">4</div>
+            <div class="deatails">
+              <div class="count">Step 4</div>
+              <div class="title">summary</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 main">
+          <h6 class="display-6 fw-bold">Select your plan</h6>
+          <p class="main__para">
+            You have the option of monthly or yearly billing.
+          </p>
+          <div class="planes monthly">
+            <button class="plane">
+              <div class="plane__icon">
+                <img src="./assets/images/icon-arcade.svg" alt="" />
+              </div>
+              <div class="plane__deatails">
+                <div class="plane__name">Arcade</div>
+                <div class="plane__price">$9/mo</div>
+              </div>
+            </button>
+            <button class="plane">
+              <div class="plane__icon">
+                <img src="./assets/images/icon-advanced.svg" alt="" />
+              </div>
+              <div class="plane__deatails">
+                <div class="plane__name">Advanced</div>
+                <div class="plane__price">$12/mo</div>
+              </div>
+            </button>
+            <button class="plane">
+              <div class="plane__icon">
+                <img src="./assets/images/icon-pro.svg" alt="" />
+              </div>
+              <div class="plane__deatails">
+                <div class="plane__name">Pro</div>
+                <div class="plane__price">$15/mo</div>
+              </div>
+            </button>
+          </div>
+          <div class="switch-container">
+            <span class="month c-black">monthly</span>
+            <button class="btn rounded-pill mx-4 switch">
+              <span class="rounded-circle left-aligned"></span>
+            </button>
+            <span class="year">yearly</span>
+          </div>
+          <div class="buttons">
+            <button class="btn back" id="back-plans" type="button">
+              Go Back
+            </button>
+            <button class="btn next" id="next-plans" type="button">
+              Next Step
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row position-absolute top-0 start-0" id="addon">
+        <div class="col-md-4 sidebar">
+          <div class="step">
+            <div class="num me-4 rounded-circle">1</div>
+            <div class="deatails">
+              <div class="count">Step 1</div>
+              <div class="title">Your info</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num me-4 rounded-circle">2</div>
+            <div class="deatails">
+              <div class="count">Step 2</div>
+              <div class="title">select plane</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num me-4 rounded-circle active">3</div>
+            <div class="deatails">
+              <div class="count">Step 3</div>
+              <div class="title">add-ons</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num me-4 rounded-circle">4</div>
+            <div class="deatails">
+              <div class="count">Step 4</div>
+              <div class="title">summary</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 main">
+          <h6 class="display-6 fw-bold">Pick add-ons</h6>
+          <p class="main__para">
+            Add-ons help enhance your gaming expierience.
+          </p>
+          <div class="add-ons">
+            <div class="add-on">
+              <div class="description">
+                <input type="checkbox" id="online" class="check" />
+                <label for="online">
+                  <div>Online service</div>
+                  <div>Access to multiple games</div>
+                </label>
+              </div>
+              <div class="prices"></div>
+            </div>
+            <div class="add-on">
+              <div class="description">
+                <input type="checkbox" id="storage" class="check" />
+                <label for="storage">
+                  <div>Larger storage</div>
+                  <div>extra 1TB of cloud save</div>
+                </label>
+              </div>
+              <div class="prices"></div>
+            </div>
+            <div class="add-on">
+              <div class="description">
+                <input type="checkbox" class="check" id="profile" />
+                <label for="profile">
+                  <div>Customizable profile</div>
+                  <div>Custome theme on your profile</div>
+                </label>
+              </div>
+              <div class="prices"></div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="btn back" id="back-addons" type="button ">
+              Go Back
+            </button>
+            <button class="btn next" id="next-addons" type="button">
+              Next Step
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row position-absolute top-0 start-0" id="final">
+        <div class="col-md-4 sidebar">
+          <div class="step">
+            <div class="num me-4 rounded-circle">1</div>
+            <div class="deatails">
+              <div class="count">Step 1</div>
+              <div class="title">Your info</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num me-4 rounded-circle">2</div>
+            <div class="deatails">
+              <div class="count">Step 2</div>
+              <div class="title">select plane</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num me-4 rounded-circle">3</div>
+            <div class="deatails">
+              <div class="count">Step 3</div>
+              <div class="title">add-ons</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num me-4 rounded-circle active">4</div>
+            <div class="deatails">
+              <div class="count">Step 4</div>
+              <div class="title">summary</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 main">
+          <h6 class="display-6 fw-bold">Finishing up</h6>
+          <p class="main__para">
+            Double check everything looks OK before Confirming.
+          </p>
+          <div class="summary">
+            <div class="info">
+              <div class="plane-type">
+                <div>
+                  <div class="final-plan-type"></div>
+                  <a href="#" class="change-btn">change</a>
+                </div>
+                <div class="final-plane-price"></div>
+              </div>
+              <div class="choosen-addons"></div>
+            </div>
+            <div class="total">
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="btn back" id="back-finish" type="button">
+              Go Back
+            </button>
+            <button class="btn next" id="confirm" type="button">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </section> -->
+
+    <script src="./dist/js/main.js"></script>
+  </body>
+</html>
